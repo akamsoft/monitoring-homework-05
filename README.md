@@ -6,7 +6,7 @@
 
 ---
 
-## Задание 1. Меню Projects
+## Задание 1. 
 
 Sentry развёрнут по официальной инструкции из репозитория [getsentry/self-hosted](https://github.com/getsentry/self-hosted) (тег `26.10.1`). После входа в систему открыто меню **Projects**.
 
@@ -17,6 +17,19 @@ Sentry развёрнут по официальной инструкции из 
 ## Задание 2. Sample Event, Stack Trace и Resolved
 
 Создан Python-проект `homework-project`. С помощью официального SDK `sentry-sdk` сгенерировано исключение `ZeroDivisionError`. В событии открыт раздел **Stack Trace** с полной трассировкой стека.
+
+'''
+import sentry_sdk
+
+sentry_sdk.init(dsn="http://93812f12add431c71c3501878aea0ade@192.168.0.18:9000/2")
+
+try:
+    1 / 0
+except ZeroDivisionError:
+    sentry_sdk.capture_exception()
+
+print("Событие отправлено. Проверьте Issues в Sentry.")
+'''
 
 **Stack Trace события:**
 
