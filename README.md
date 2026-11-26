@@ -18,7 +18,7 @@ Sentry развёрнут по официальной инструкции из 
 
 Создан Python-проект `homework-project`. С помощью официального SDK `sentry-sdk` сгенерировано исключение `ZeroDivisionError`. В событии открыт раздел **Stack Trace** с полной трассировкой стека.
 
-'''
+```
 import sentry_sdk
 
 sentry_sdk.init(dsn="http://93812f12add431c71c3501878aea0ade@192.168.0.18:9000/2")
@@ -29,7 +29,7 @@ except ZeroDivisionError:
     sentry_sdk.capture_exception()
 
 print("Событие отправлено. Проверьте Issues в Sentry.")
-'''
+```
 
 **Stack Trace события:**
 
